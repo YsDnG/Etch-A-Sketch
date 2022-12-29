@@ -24,35 +24,31 @@ size16.addEventListener('change',drawOnGrid)
 size32.addEventListener('change',drawOnGrid)
 
 let colorSelected = "black"
-colorSelector.addEventListener('change',() => 
-{
-    colorSelected = colorSelector.value
-})
+/* Change the color selected*/
+colorSelector.addEventListener('change',() => colorSelected = colorSelector.value)
 
-function changecolor(e)
-{
-    colorSelected = this.value
-}
+
+
+
 
 
 function drawOnGrid(e)
 {
     let sizeGrid= null
+    
     if(this.id.includes('16'))
     {
+        sizeGrid=64
         size32.checked=false
         resetgrid()
-        sizeGrid = 64
-        container.style.gridTemplateRows ="1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr"
-        container.style.gridTemplateColumns ="1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr"
+        defineGridfr(sizeGrid,"")
     }
     else
     {
+        sizeGrid=256
         size16.checked=false
-        sizeGrid = 256
         resetgrid()
-        container.style.gridTemplateRows ="1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr "
-        container.style.gridTemplateColumns ="1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr"
+        defineGridfr(sizeGrid,"") 
     }
     
     
@@ -78,7 +74,7 @@ function drawOnGrid(e)
                 },true)
 
                 divInsideContainer.forEach(d=>{
-                    d.addEventListener('click',(event)=>{
+                    d.addEventListener('touchstart',(event)=>{
                         d.style.backgroundColor = colorSelected
                     })
                 })
@@ -144,6 +140,17 @@ function createGrid(gridSize){
     }
 
     
+}
+
+/* Create de grid with the size choice */
+function defineGridfr(sizeGrid,gridfr)
+{
+        for(i=0;i<Math.sqrt(sizeGrid);i++)
+        {
+            gridfr=gridfr+"1fr "
+        }
+        container.style.gridTemplateRows = gridfr
+        container.style.gridTemplateColumns = gridfr
 }
    
 document.getElementById('Reset').addEventListener('click',resetgrid)
