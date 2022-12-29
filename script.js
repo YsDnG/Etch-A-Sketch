@@ -62,16 +62,10 @@ function drawOnGrid(e)
         if(isMobileDevice)
         {
             divInsideContainer.forEach(d=> {  
-                ['touchdown' ,'touchmove'].forEach(function(e){
-                        d.addEventListener(e,()=>{
-                            if(!canSelect && e !=='touchdown') return;
-                            d.style.backgroundColor = colorSelected
-    
-                        })
-    
-                })
-              
-            });
+                    d.addEventListener('touchdown',(e)=>{
+                        d.style.backgroundColor=colorSelected
+                    })
+                }
 
         }
         else{
