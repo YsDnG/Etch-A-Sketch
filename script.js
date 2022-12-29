@@ -13,11 +13,12 @@ function isMobile() {
     return check;
   };
 
-container.addEventListener('mousedown',() => canSelect = true)
-container.addEventListener('mouseup',()=> canSelect= false)
+if(!isMobileDevice)
+{
+    container.addEventListener('mousedown',() => canSelect = true)
+    container.addEventListener('mouseup',()=> canSelect= false)
+}
 
-container.addEventListener('touchstart',() => canSelect = true)
-container.addEventListener('touchsend',()=> canSelect= false)
 
 size16.addEventListener('change',drawOnGrid)
 size32.addEventListener('change',drawOnGrid)
@@ -59,15 +60,24 @@ function drawOnGrid(e)
     {
        createGrid(sizeGrid)
         const divInsideContainer = document.querySelectorAll('.divGrid')
+
         if(isMobileDevice)
         {
-            divInsideContainer.forEach(d=> {  
-                    d.addEventListener('touchEvent',(e)=>{
-                        d.style.backgroundColor=colorSelected
-                    })
-                
+            container.addEventListener('touchmove',(e)=>{
 
-            })
+                const clientX = e.clientX || e.changedTouches[0].clientX;
+                const clientY = e.clientY || e.changedTouches[0].clientY;
+                
+                divInsideContainer.forEach(d=> {
+                    if(document.elementFromPoint(clientX,clientY) === d)
+                        d.style.backgroundColor = colorSelected
+
+                })
+                
+               
+                })
+            
+            
         }
         else
         {
@@ -75,7 +85,7 @@ function drawOnGrid(e)
                 ['mousedown' ,'mouseover'].forEach(function(e){
                         d.addEventListener(e,()=>{
                             if(!canSelect && e !=='mousedown') return;
-                            d.style.backgroundColor = colorSelected
+                                d.style.backgroundColor = colorSelected
     
                         })
     
