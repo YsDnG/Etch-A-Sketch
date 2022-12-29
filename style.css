@@ -99,8 +99,8 @@ input[type="color"]::-webkit-color-swatch {
 .container
 {
     
-    width: 60vw;
-    height: 60vh;
+    width: 70vmin;
+    height: 70vmin;
     margin-top: 2em;
     border-style: solid;
     border-width: 0.5em;
