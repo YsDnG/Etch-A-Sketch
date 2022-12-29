@@ -65,10 +65,12 @@ function drawOnGrid(e)
                     d.addEventListener('touchEvent',(e)=>{
                         d.style.backgroundColor=colorSelected
                     })
-                }
+                
 
+            })
         }
-        else{
+        else
+        {
             divInsideContainer.forEach(d=> {  
                 ['mousedown' ,'mouseover'].forEach(function(e){
                         d.addEventListener(e,()=>{
@@ -82,9 +84,10 @@ function drawOnGrid(e)
             });
 
         }
-        
-        
     }
+        
+        
+    
     else
     {
         
