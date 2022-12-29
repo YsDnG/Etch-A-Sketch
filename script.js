@@ -64,10 +64,11 @@ function drawOnGrid(e)
         if(isMobileDevice)
         {
             container.addEventListener('touchmove',(e)=>{
+                e.preventDefault();
 
                 const clientX = e.clientX || e.changedTouches[0].clientX;
                 const clientY = e.clientY || e.changedTouches[0].clientY;
-                
+
                 divInsideContainer.forEach(d=> {
                     if(document.elementFromPoint(clientX,clientY) === d)
                         d.style.backgroundColor = colorSelected
@@ -75,7 +76,7 @@ function drawOnGrid(e)
                 })
                 
                
-                })
+                },false)
             
             
         }
