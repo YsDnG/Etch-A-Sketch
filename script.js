@@ -70,13 +70,20 @@ function drawOnGrid(e)
                 const clientY = e.clientY || e.changedTouches[0].clientY;
 
                 divInsideContainer.forEach(d=> {
+                   
                     if(document.elementFromPoint(clientX,clientY) === d)
                         d.style.backgroundColor = colorSelected
 
                 })
+                },true)
+
+                divInsideContainer.forEach(d=>{
+                    d.addEventListener('click',(event)=>{
+                        d.style.backgroundColor = colorSelected
+                    })
+                })
+
                 
-               
-                },false)
             
             
         }
