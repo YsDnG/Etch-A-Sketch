@@ -105,3 +105,18 @@ input{
    
 }
 
+@media screen and (max-width:500px) {
+    label
+    {
+        font-size:  4vw;
+    }
+    input{
+        width: 4vw;
+        height: 4vw;
+    }
+    .container{
+        width: 90vw;
+    }
+    
+}
+
