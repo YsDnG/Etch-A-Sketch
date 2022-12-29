@@ -62,7 +62,7 @@ function drawOnGrid(e)
         if(isMobileDevice)
         {
             divInsideContainer.forEach(d=> {  
-                    d.addEventListener('touchmove',(e)=>{
+                    d.addEventListener('touchEvent',(e)=>{
                         d.style.backgroundColor=colorSelected
                     })
                 }
