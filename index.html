@@ -11,23 +11,27 @@
     <h1> Etch-A-Sketch </h1>
      
             <div class="menu">
+                <div >
+                    <label id="sizeSliderDisplay">256</label>
+                    <input type="range" id="sizeSlider"  min="8" max="64" value="16">
+                   
+                </div >
                 <div class="choice">
-                    <div>
-                        <label fontSize="5"> 64</label>
-                        <input id=size16 type="checkbox" checked>  
-                    </div>
-                    <div>
-                        <label>256</label>
-                        <input id="size32" type="checkbox"> 
-                    </div>
-                    <div>
+                    <div class="button">
                         <button id="Reset"> Clear </button>
                     </div>
-                </div>
-            <div class="colorChoice">
-                
-                <input id="colorGrid" type="color" value="#E7A01C">
+                    <div class="button">
+                        <button id="Erase" > Erase </button>
+                    </div>
+                    <div class="button">
+                        <button id="Rainbow" > Rainbow </button>
+                    </div>
+                    <div>
+                    <label> Color </label>
+                    <input id="colorGrid" type="color" value="#5adaff">
+                    </div>
             </div>
+            
         </div>
     
 

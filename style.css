@@ -46,19 +46,20 @@ h2
     text-align: center;
     line-height: 1em;
 }
-input{
-    height: 2vmin;
-    width: 2vmin;
-    
+input[type="range"] {
+    appearance: auto;
+    cursor: default;
+    padding: initial;
+    border: initial;
+    width: 10vmin;
+    margin: 2px;
 }
-
-
 
 input[type="color"] {
 	-webkit-appearance: none;
 	border: none;
-	width: 10vmin;
-	height: 10vmin;
+	width: 5vmin;
+	height: 5vmin;
     border-radius: 50%;
     
 }
@@ -71,6 +72,55 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 
+.add-focus{
+    box-shadow: #c2e03c 0 0 0 3.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    
+}
+/* CSS */
+button{
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+.button{
+    flex: 1;
+}
+
+
+
+
+
+button:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+
 
 .menu{
     display: flex;
@@ -80,6 +130,7 @@ input[type="color"]::-webkit-color-swatch {
     gap: 3em;
     height: 10vh;
     margin-top: 5em;
+    
 }
 .colorChoice{
     display: flex;
@@ -91,7 +142,7 @@ input[type="color"]::-webkit-color-swatch {
     .choice
 {
     display: flex;
-    gap: 2em;
+    gap: 1em;
     justify-content: center;
     align-items: center;
 }
@@ -99,14 +150,13 @@ input[type="color"]::-webkit-color-swatch {
 .container
 {
     
-    width: 70vmin;
-    height: 70vmin;
+    width: 80vmin;
+    height: 80vmin;
     margin-top: 2em;
     border-style: solid;
-    border-width: 0.5em;
+    border-width: 0.2em;
     border-color: rgb(231, 160, 28);
     display: grid;
-    
     background-color: white;
     margin-bottom: 2em;
     overflow:hidden
@@ -136,6 +186,15 @@ input[type="color"]::-webkit-color-swatch {
     }
     html{
         overflow: unset;
+    }
+
+    button{
+        height:  24px;
+        
+    }
+    .choice
+    {
+        flex-wrap: wrap;
     }
     
 }
