@@ -43,7 +43,7 @@ if(colorSelected!== 'white')
 document.getElementById('Reset').addEventListener('click',resetgrid)
 
 /* Change the color selected */
-colorSelector.addEventListener('change',() => colorSelected = colorSelector.value)
+colorSelector.addEventListener('change',() => {colorSelected = colorSelector.value; isRainbowMode=false})
 
 /* Rainbow mode*/
 
@@ -58,6 +58,7 @@ buttonRainbow.addEventListener('click',(e)=>{
     {
         buttonRainbow.classList.remove('add-focus')
         isRainbowMode = false;
+    
     }
     })
 
